@@ -99,13 +99,32 @@ window.onload = function() {
     alterClass();
   });
 
-
-$(document).ready(function($) {
-  $(".card-text-trim").each(function() {
-      var lengthtrim = 1200;
-      if ($(this).text().length > lengthtrim) {
-          $(this).text($(this).text().substr(0, lengthtrim));
-          $(this).append('...');
-      }
+  jQuery(document).ready(function($) {
+    var alterClassTrim = function() {
+      var ww = document.body.clientWidth;
+      
+      if (ww <= 991.98) {
+        $(".card-text-trim").each(function() {
+            var lengthtrim = 700;
+            if ($(this).text().length > lengthtrim) {
+                $(this).text($(this).text().substr(0, lengthtrim));
+                $(this).append('...');
+            }
+        });
+        
+      } else if (ww > 991.98) {
+        $(".card-text-trim").each(function() {
+            var lengthtrim = 1200;
+            if ($(this).text().length > lengthtrim) {
+                $(this).text($(this).text().substr(0, lengthtrim));
+                $(this).append('...');
+            }
+        });
+      };
+    };
+    $(window).resize(function(){
+      alterClassTrim();
+    });
+    //Fire it when the page first loads:
+    alterClassTrim();
   });
-});

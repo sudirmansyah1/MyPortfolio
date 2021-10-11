@@ -29,6 +29,11 @@ Route::post('/admin/login/auth', [App\Http\Controllers\AuthController::class, 'l
 
 Route::get('/admin/logout', [App\Http\Controllers\AuthController::class, 'logout']);
 
+// BLOG
+Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index']);
+
+Route::get('/blog/view/{id}', [App\Http\Controllers\BlogController::class, 'blogview']);
+
 Route::middleware('isLogged')->group(function(){
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
 
@@ -98,7 +103,4 @@ Route::middleware('isLogged')->group(function(){
     
     Route::get('/admin/portfolio/delete/{id}',[App\Http\Controllers\PortfolioController::class, 'DeletePortfolioProcess']);
 });
-
-// BLOG
-Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index']);
 

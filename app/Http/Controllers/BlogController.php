@@ -17,4 +17,10 @@ class BlogController extends Controller
         $bloglist = BlogModel::get();
         return view('blog', ['bloglist' => $bloglist]);
     }
+
+    public function blogview($id)
+    {
+        $blogview = BlogModel::where('id', $id)->get();
+        return view('blogview', ['blogview' => $blogview]);
+    }
 }
