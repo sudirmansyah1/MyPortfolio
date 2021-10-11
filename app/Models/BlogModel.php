@@ -9,4 +9,9 @@ class BlogModel extends Model
 {
     use HasFactory;
     protected $table = "tb_blogs";
+
+    public function users()
+    {
+    	return $this->hasOne(UserModel::class, 'id');
+    }
 }

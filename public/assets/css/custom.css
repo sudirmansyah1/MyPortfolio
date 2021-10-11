@@ -313,3 +313,27 @@ section.body-portfolio div.filter-card {
   background: rgba(0, 0, 0, 0.2);
   background-size: 100% 100vh;
 }
+
+section.body-blog {
+  /* height: 100vh; */
+  background-color: black;
+  padding-top:50px;
+  padding-bottom:50px;
+  min-height: 100vh;
+  text-decoration: none;
+}
+
+section.body-blog a{
+  text-decoration: none;
+}
+
+section.body-blog  div.card {
+  background: rgba(255,255,255, 0.2);
+  color: white;
+  border: 2px solid rgba(255,255,255, 0.4);
+}
+
+section.body-blog  div.card img.card-img-top{
+  height:300px;
+  object-fit: cover;
+}

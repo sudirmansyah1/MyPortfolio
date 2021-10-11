@@ -19,7 +19,8 @@ class CreateTbBlogsTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->string('text');
-            $table->string('uid');
+            $table->unsignedBigInteger('uid');
+            $table->foreign('uid')->preferences('id')->on('users')->onDelete('cascade');
         });
     }
 

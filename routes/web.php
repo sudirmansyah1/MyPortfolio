@@ -99,3 +99,6 @@ Route::middleware('isLogged')->group(function(){
     Route::get('/admin/portfolio/delete/{id}',[App\Http\Controllers\PortfolioController::class, 'DeletePortfolioProcess']);
 });
 
+// BLOG
+Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index']);
+

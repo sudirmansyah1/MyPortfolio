@@ -32,7 +32,7 @@ class AuthController extends Controller
         if($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput($req->all);
         }
-
+        
         $data = [
             'name' => $req->username,
             'password' => $req->password
@@ -40,6 +40,8 @@ class AuthController extends Controller
         // return "Test";
         Auth::attempt($data);
         if (Auth::check()) {
+            var_dump("true");
+            die;
             return redirect()->route('admin');
         } else{
             return "Maaf email atau password yang anda masukan tidak sesuai.";

@@ -98,3 +98,14 @@ window.onload = function() {
     //Fire it when the page first loads:
     alterClass();
   });
+
+
+$(document).ready(function($) {
+  $(".card-text-trim").each(function() {
+      var lengthtrim = 1200;
+      if ($(this).text().length > lengthtrim) {
+          $(this).text($(this).text().substr(0, lengthtrim));
+          $(this).append('...');
+      }
+  });
+});
