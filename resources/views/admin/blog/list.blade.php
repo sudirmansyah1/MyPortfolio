@@ -48,7 +48,7 @@
 
                             <td><img src="{{ URL::asset($blog->image) }}" height="35px" alt="{{$blog->title}}"> {{$blog->title}}</td>
 
-                            <td>{{ $blog->created_at }}</td>
+                            <td>@if (is_null($blog->updated_at)) {{ $blog->created_at }} @else Last Change: {{ $blog->updated_at }} @endif</td>
 
                             <td class="short-text-blog">{{ $blog->text }}</td>
 

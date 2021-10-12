@@ -83,8 +83,8 @@ class PortfolioController extends Controller
             $imagename = pathinfo($imagefile->getClientOriginalName(), PATHINFO_FILENAME);
             $imagefile->move(public_path().'/assets/img/upload/portfolio', $imagename.'_'.time().'.'.$imagefile->getClientOriginalExtension());
             File::delete(public_path().'/'.$req->lastimage);
-            UserModel::where('pid', $req->pid)->update([
-                'photo' => 'assets/img/upload/portfolio/'.$imagename.'_'.time().'.'.$imagefile->getClientOriginalExtension(),
+            PortfolioModel::where('pid', $req->pid)->update([
+                'project_image' => 'assets/img/upload/portfolio/'.$imagename.'_'.time().'.'.$imagefile->getClientOriginalExtension(),
             ]);
         }
 

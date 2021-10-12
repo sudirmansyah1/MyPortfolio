@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title', "Add Blog")
+@section('title', "Edit Blog")
 
 @section('content')
     <div class="row">
@@ -17,30 +17,36 @@
             @endif
             <div class="card">
                 <div class="card-body">
-                    <form action="/admin/blog/add/process" method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <div class="row">
-                            <div class="col-sm-8 col-md-6 col-lg-8">
-                                <div class="form-group">
-                                    <label for="title">Title:</label>
-                                    <input type="text" class="form-control" id="title" name="title">
+                    @foreach ($blogdata as $blog)
+                        <form action="/admin/blog/edit/process" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <input type="hidden" name="id" value="{{ $blog->id }}">
+                            <div class="row">
+                                <div class="col-sm-8 col-md-6 col-lg-8">
+                                    <div class="form-group">
+                                        <label for="title">Title:</label>
+                                        <input type="text" class="form-control" id="title" name="title" value="{{ $blog->title }}">
+                                    </div>
+                
+                                    <div class="form-group">            
+                                        <label for="summernote">Text:</label>            
+                                        <textarea name="text" id="summernote" cols="30" rows="10">
+                                            {!! $blog->text !!}
+                                        </textarea>
+                                    </div>
                                 </div>
-            
-                                <div class="form-group">            
-                                    <label for="summernote">Text:</label>            
-                                    <textarea name="text" id="summernote" cols="30" rows="10"></textarea>
+                                <div class="col-sm-4 col-md-6 col-lg-4">
+                                    <div class="form-group">
+                                        <label for="image">Cover Image:</label>
+                                        <input type="file" class="form-control-file border" id="image" name="image">
+                                        <img src="{{ URL::asset($blog->image) }}" height="100px" style="margin-top:10px;" alt="">    
+                                    </div>
+                
+                                    <button type="submit" class="btn btn-primary">Post</button>
                                 </div>
-                            </div>
-                            <div class="col-sm-4 col-md-6 col-lg-4">
-                                <div class="form-group">
-                                    <label for="image">Cover Image:</label>
-                                    <input type="file" class="form-control-file border" id="image" name="image">        
-                                </div>
-            
-                                <button type="submit" class="btn btn-primary">Post</button>
-                            </div>
-                        </div>                  
-                    </form>
+                            </div>                  
+                        </form>
+                    @endforeach
                 </div>
             </div>    
         </div>
@@ -74,3 +80,4 @@
         })
     </script>
 @endsection
+
