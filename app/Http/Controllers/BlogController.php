@@ -14,7 +14,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $bloglist = BlogModel::get();
+        $bloglist = BlogModel::paginate(10);
         return view('blog', ['bloglist' => $bloglist]);
     }
 
@@ -22,5 +22,14 @@ class BlogController extends Controller
     {
         $blogview = BlogModel::where('id', $id)->get();
         return view('blogview', ['blogview' => $blogview]);
+    }
+
+    public function adminBlog(){
+        $bloglist = BlogModel::get();
+        return view('admin.blog.list', ['bloglist' => $bloglist]);
+    }
+
+    public function showAddBlogForm(){
+        return view('admin.blog.add');
     }
 }

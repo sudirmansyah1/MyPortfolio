@@ -12,6 +12,6 @@ class BlogModel extends Model
 
     public function users()
     {
-    	return $this->hasOne(UserModel::class, 'id');
+    	return $this->hasOne(UserModel::class, 'id','uid');
     }
 }

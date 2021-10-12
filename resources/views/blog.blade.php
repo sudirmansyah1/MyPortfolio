@@ -10,18 +10,19 @@
         <div class="container">
           @foreach ($bloglist as $blog)
             <a href="/blog/view/{{ $blog->id }}">
-              <div class="card">
+              <div class="card"  style="margin-bottom:25px;">
                   <img class="card-img-top card-img-custom" src="{{ $blog->image }}" alt="Card image">
                   <div class="card-body">
                     <h4 class="card-title">{{ $blog->title }}</h4>
                     <div style="margin-bottom:15px;">
                       <span class="badge bg-primary">{{ $blog->users->name }}</span> <span class="badge bg-success">{{ $blog->created_at }}</span>
                     </div>
-                    <p class="card-text card-text-trim">{{ $blog->text }}</p>
+                    <p class="card-text card-text-trim text-justify">{{ $blog->text }}</p>
                   </div>
               </div>
             </a>
           @endforeach
+          {!! $bloglist->links('vendor.pagination.bootstrap-4') !!}
         </div>
       </div>
     </section>

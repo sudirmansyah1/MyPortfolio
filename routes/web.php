@@ -102,5 +102,18 @@ Route::middleware('isLogged')->group(function(){
     Route::post('/admin/portfolio/edit/process',[App\Http\Controllers\PortfolioController::class, 'EditPortfolioProcess']);
     
     Route::get('/admin/portfolio/delete/{id}',[App\Http\Controllers\PortfolioController::class, 'DeletePortfolioProcess']);
+
+    // BLOG
+    Route::get('/admin/blog',[App\Http\Controllers\BlogController::class, 'adminBlog'])->name('admin.blog');
+
+    Route::get('/admin/blog/add',[App\Http\Controllers\BlogController::class, 'showAddBlogForm'])->name('admin.blog.showAddBlogForm');
+    
+    Route::post('/admin/blog/add/process',[App\Http\Controllers\BlogController::class, 'AddBlogProcess']);
+    
+    Route::get('/admin/blog/edit/{id}',[App\Http\Controllers\BlogController::class, 'showEditBlogForm']);
+    
+    Route::post('/admin/blog/edit/process',[App\Http\Controllers\BlogController::class, 'EditBlogProcess']);
+    
+    Route::get('/admin/blog/delete/{id}',[App\Http\Controllers\BlogController::class, 'DeleteBlogProcess']);
 });
 
