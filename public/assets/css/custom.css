@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron&family=Pathway+Gothic+One&family=Rubik:wght@300&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron&family=Pathway+Gothic+One&family=Electrolize&family=Barlow+Condensed:wght@100&family=Rubik:wght@300&family=Roboto+Condensed:wght@300;400&family=Bebas+Neue&display=swap');
 
 body {
     background: url(../img/background.jpg);
@@ -14,7 +14,9 @@ nav .navbar {
 }
 
 nav .nav-link {
-  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Orbitron', sans-serif; */
+  font-family: 'Roboto Condensed', sans-serif;
+  /* font-family: 'Barlow Condensed', sans-serif; */
   font-weight: bold;
   font-size: 12px;
   text-transform: uppercase;
@@ -50,7 +52,7 @@ nav .nav-link-ltr:hover::before {
 }
 
 nav .navbar .navbar-brand {
-  color: #fff;
+  
 }
 
 nav .dropdown:hover>.dropdown-menu {
@@ -69,7 +71,6 @@ nav .navbar-toggler {
 }
 
 nav .navbar.active .nav-link {
-  font-family: 'Orbitron', sans-serif;
   color: #fff;
 }
 
@@ -86,6 +87,9 @@ nav .navbar.active .navbar-brand {
 
 nav .navbar-brand {
   font-family: 'Audiowide', cursive;
+  /* font-family: 'Electrolize', sans-serif; */
+  font-size: 25px !important;
+  color: #fff;
 }
 
 nav .navbar.active .navbar-brand img {
@@ -123,12 +127,22 @@ div.front{
   transform: translate(-50%, -50%);
 }
 
-div.text{
+div.text .typewrite {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: bold;
+  font-size: 27px;
+}
+
+div.center-home {
   position: fixed;
-  color: #FFFFFF;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+div.text{
+  color: #FFFFFF;
+  /* transform: translate(-50%, -50%); */
+  /* top: 50%; */
 }
 
 div.text img.itsme {
@@ -147,6 +161,24 @@ div.text h1{
 
 div.text h1 a{
   color:#fff; text-decoration: none;
+}
+
+div.text h1.myName {
+  font-family: 'Electrolize', sans-serif;
+}
+
+@media (max-width: 991.98px) {
+  div.text .text-align {
+    text-align: center;
+  }
+
+  div.text h1.myName {
+    display: none;
+  }
+
+  div.text .typewrite {
+    font-size: 32px;
+  }
 }
 
 @media (min-aspect-ratio: 16/9) {
