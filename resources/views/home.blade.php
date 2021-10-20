@@ -48,7 +48,7 @@
 
 </head>
 
-<body class="lazy" data-bg="{!! URL::asset('assets/img/background.jpg'); !!}">
+<body class="lozad" data-background-image="{!! URL::asset('assets/img/background.jpg'); !!}">
 
   
 
@@ -134,7 +134,7 @@
 
       </div> -->
 
-      <video autoplay loop id="myVideo" class="lazy" data-src="{!! URL::asset('assets/video/background.mp4'); !!}" data-poster="{!! URL::asset('assets/img/background.jpg'); !!}">
+      <video autoplay loop id="myVideo">
 
         <source src="{{ URL::asset('assets/video/background.mp4'); }}" type="video/mp4">
 
@@ -145,7 +145,7 @@
         <div class="row">
           <div class="col-sm-4 col-md-6 col-lg-4">
             <div class="text">
-            <center><img class="itsme" class="lazy" data-src="{!! URL::asset('assets/img/sudirmansyah.jpg'); !!}" src="{{ URL::asset('assets/img/sudirmansyah.jpg'); }}" alt=""></center>
+            <center><img class="lozad itsme" data-src="{!! URL::asset('assets/img/sudirmansyah.jpg'); !!}" alt="Sudirmansyah"></center>
           </div>
           </div>
           <div class="col-sm-8 col-md-6 col-lg-8">
@@ -162,7 +162,6 @@
           </div>
         </div>
       </div>
-
 
 
     <div class="socialmedia">
@@ -231,9 +230,15 @@
 
     <!-- Lazyload JavaScript -->
 
-    <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+    <script>
+      const observer = lozad();
+      observer.observe();
 
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script>
+      // ... code to dynamically add elements
+      observer.observe(); // observes newly added elements as well
+
+    </script>
 
     <!-- Custom JavaScript -->
 

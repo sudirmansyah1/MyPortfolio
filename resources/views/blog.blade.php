@@ -11,7 +11,7 @@
           @foreach ($bloglist as $blog)
             <a href="/blog/view/{{ $blog->id }}">
               <div class="card"  style="margin-bottom:25px;">
-                  <img class="card-img-top card-img-custom" src="{{ URL::asset($blog->image) }}" alt="Card image">
+                  <img class="card-img-top card-img-custom lozad" data-src="{{ URL::asset($blog->image) }}" alt="Card image">
                   <div class="card-body">
                     <h4 class="card-title">{{ $blog->title }}</h4>
                     <div style="margin-bottom:15px;">

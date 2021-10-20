@@ -24,7 +24,7 @@
 
                 <div class="col-6 About-Col">
 
-                    <center><img class="itsme about-img" class="lazy" data-src="{!! URL::asset('assets/img/sudirmansyah.jpg'); !!}" src="assets/img/sudirmansyah.jpg" alt=""></center>
+                    <center><img class="itsme about-img lozad" data-src="{!! URL::asset('assets/img/sudirmansyah.jpg'); !!}" alt="Sudirmansyah"></center>
 
                 </div>
 

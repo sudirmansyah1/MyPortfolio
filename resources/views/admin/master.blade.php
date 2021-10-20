@@ -42,7 +42,7 @@
 
     <div class="preloader flex-column justify-content-center align-items-center">
 
-        <img class="animation__shake" src="{{ URL::asset('AdminLTE/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
+        <img class="animation__shake lozad" data-src="{{ URL::asset('AdminLTE/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
 
     </div>
 
@@ -118,7 +118,7 @@
 
     <a href="/" class="brand-link">
 
-      <img src="{{ URL::asset('AdminLTE/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img data-src="{{ URL::asset('AdminLTE/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 lozad" style="opacity: .8">
 
       <span class="brand-text font-weight-light">SUDIRMANSYAH.COM</span>
 
@@ -136,7 +136,7 @@
 
         <div class="image">
 
-          <img src="{{ URL::asset(Auth::user()->photo) }}" class="img-circle elevation-2" alt="User Image">
+          <img data-src="{{ URL::asset(Auth::user()->photo) }}" class="img-circle elevation-2 lozad" alt="User Image">
 
         </div>
 
@@ -449,7 +449,15 @@
   <!-- Page specific script -->
 
   @yield('custom_js')
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+  <script>
+    const observer = lozad();
+    observer.observe();
 
+    // ... code to dynamically add elements
+    observer.observe(); // observes newly added elements as well
+
+  </script>
 </body>
 
 </html>

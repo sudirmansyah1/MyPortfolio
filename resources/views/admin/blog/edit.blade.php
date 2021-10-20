@@ -39,7 +39,7 @@
                                     <div class="form-group">
                                         <label for="image">Cover Image:</label>
                                         <input type="file" class="form-control-file border" id="image" name="image">
-                                        <img src="{{ URL::asset($blog->image) }}" height="100px" style="margin-top:10px;" alt="">    
+                                        <img class="lozad" data-src="{{ URL::asset($blog->image) }}" height="100px" style="margin-top:10px;" alt="Sudirmansyah">    
                                     </div>
                 
                                     <button type="submit" class="btn btn-primary">Post</button>

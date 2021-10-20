@@ -18,7 +18,7 @@
         <div class="container">
           @foreach ($blogview as $blog)
               <div class="card">
-                  <img class="card-img-top" src="{{ URL::asset($blog->image) }}" alt="Card image">
+                  <img class="card-img-top lozad" data-src="{{ URL::asset($blog->image) }}" alt="Card image">
                   <div class="card-body">
                     <h4 class="card-title">{{ $blog->title }}</h4>
                     <div style="margin-bottom:15px;">

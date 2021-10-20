@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron&family=Pathway+Gothic+One&family=Electrolize&family=Barlow+Condensed:wght@100&family=Rubik:wght@300&family=Roboto+Condensed:wght@300;400&family=Bebas+Neue&display=swap');
 
 body {
-    background: url(../img/background.jpg);
+    /* background: url(../img/background.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
