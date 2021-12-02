@@ -25,6 +25,8 @@
                       <span class="badge bg-primary">{{ $blog->users->name }}</span> <span class="badge bg-success">{{ $blog->created_at }}</span>
                     </div>
                     <p class="card-text text-justify">{!! $blog->text !!}</p>
+                    
+                    <p class="card-text text-justify">{!! $blog->text !!}</p>
                   </div>
               </div>
           @endforeach
